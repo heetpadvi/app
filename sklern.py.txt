@@ -1,0 +1,37 @@
+#sklearn
+
+from sklearn.datasets import load_iris
+var=load_iris()
+x=var.data
+y=var.target
+
+x_name=var.feature_names
+y_name=var.target_names
+print("feature data",x)
+print("target data",y)
+print("feature names",x_name)
+print("targets name",y_name)
+
+from sklearn.model_selection import train_test_split
+
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.4)
+
+print("shape of x_train",x_train.shape)
+print("shape of y_train",y_train.shape)
+print("shape of x_test",x_test.shape)
+print("shape of y_test",y_test.shape)
+
+
+from sklearn.neighbors import KNeighborsClassifier
+
+m=KNeighborsClassifier()
+
+m.fit(x_train,y_train)
+
+prediction=m.predict(x_test)
+
+print("prediction",prediction)
+
+from sklearn import metrics
+
+print("accuracy:",metrics.accuracy_score(y_test,prediction))

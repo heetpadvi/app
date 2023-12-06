@@ -1,0 +1,71 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Plotting a simple line graph
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 6, 8, 10])
+plt.plot(x, y)
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Simple Line Plot")
+plt.show()
+
+# Plotting a second line with a dotted linestyle
+x2 = np.array([0, 40])
+y2 = np.array([0, 240])
+plt.plot(x2, y2, linestyle='dotted')
+plt.title("Second Line Plot with Dotted Linestyle")
+plt.show()
+
+# Creating a scatter plot
+x1 = [1, 2, 3, 4, 5]
+y1 = [2, 4, 6, 8, 10]
+plt.scatter(x1, y1)
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Scatter Plot')
+plt.grid()
+plt.show()
+
+# Creating a bar plot
+a = ['A', 'B', 'C', 'D']
+b = [10, 20, 15, 25]
+plt.bar(a, b)
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Bar Plot')
+plt.show()
+
+# Creating a histogram
+newp = np.random.normal(170, 10, 250)
+plt.hist(newp)
+plt.title('Histogram')
+plt.show()
+
+# Creating a pie chart
+newx = np.array([35, 15, 25, 25])
+myLabels = ["Apple", "Banana", "Strawberry", "Mango"]
+plt.pie(newx, labels=myLabels)
+plt.legend(title='Four fruits')
+plt.title('Pie Chart')
+plt.show()
+
+# Creating a box plot
+data = np.random.randn(100)
+plt.boxplot(data)
+plt.title('Box Plot')
+plt.show()
+
+# Creating a violin plot
+data = np.random.randn(100)
+plt.violinplot(data)
+plt.title('Violin Plot')
+plt.show()
+
+# Creating a scatter plot with specified colors
+x6 = np.array([5, 7, 8, 7, 2, 17, 2, 9, 4, 11, 12, 9, 6])
+y6 = np.array([99, 86, 87, 88, 111, 86, 103, 87, 94, 78, 77, 85, 86])
+colors = np.array(["red", "green", "blue", "yellow", "pink", "black", "orange", "purple", "beige", "brown", "gray", "cyan", "magenta"])
+plt.scatter(x6, y6, c=colors)
+plt.title('Scatter Plot with Colors')
+plt.show()

@@ -1,0 +1,56 @@
+import numpy as np
+#1
+a = np.array([1,2,3])
+print(a)
+#2
+b = np.arange(1,6)
+print(b)
+#3
+c = np.zeros(5)
+print(c)
+#4
+d = np.ones(3)
+print(d)
+#5
+e = np.linspace(0,1,4)
+print(e)
+#6
+f = np.random.rand(4)
+print(f)
+#7
+g = np.random.randint(0,10,5)
+print(g)
+#8
+h = np.array([1,5,9])
+min = np.min(h)
+print(min)
+#9
+i = np.array([5,7,3])
+max = np.max(i)
+print(max)
+#10
+j = np.sum([5,3,6,3,7])
+print(j)
+#11
+k = np.array([1,0,1])
+type = k.astype('bool')
+print(type)
+#12
+l = np.array([1,2,3,4,5])
+copy = l.copy()
+l[0] = 60
+print(l)
+print(copy)
+#13
+m = np.array([4,2,7,8,1])
+view = m.view()
+m[1] = 20
+print(m)
+print(view)
+#14
+n = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+print(n.shape)
+#15
+o = np.array([1,2,3,4,5,6,7,8,9,10])
+reshape = o.reshape(5,2)
+print(reshape)

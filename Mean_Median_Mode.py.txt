@@ -1,0 +1,36 @@
+#Mean, Median, Mode Without using
+
+# Calculate Mean
+def calculate_mean(data):
+    total = sum(data)
+    mean = total / len(data)
+    return mean
+
+# Calculate Median
+def calculate_median(data):
+    sorted_data = sorted(data)
+    n = len(sorted_data)
+    if n % 2 == 0:
+        median = (sorted_data[n // 2 - 1] + sorted_data[n // 2]) / 2
+    else:
+        median = sorted_data[n // 2]
+    return median
+
+# Calculate Mode
+def calculate_mode(data):
+    counts = {}
+    for item in data:
+        counts[item] = counts.get(item, 0) + 1
+    mode = max(counts, key=counts.get)
+    return mode
+
+# Example data
+data = [1, 2, 2, 3, 4, 4, 4, 5]
+
+mean = calculate_mean(data)
+median = calculate_median(data)
+mode = calculate_mode(data)
+
+print("Mean:", mean)
+print("Median:", median)
+print("Mode:", mode)

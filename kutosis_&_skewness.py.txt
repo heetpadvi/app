@@ -1,0 +1,36 @@
+kurtosis&skewness
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm, skew, kurtosis
+
+# Generate synthetic data for class test results (replace this with your actual data)
+np.random.seed(42)
+test_results = np.random.normal(loc=70, scale=10, size=1000)
+
+# Plot the histogram and fit a normal distribution
+plt.hist(test_results, bins=30, density=True, alpha=0.6, color='g')
+
+# Compute mean and standard deviation
+mu, sigma = np.mean(test_results), np.std(test_results)
+
+# Plot the PDF of the fitted normal distribution
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100)
+p = norm.pdf(x, mu, sigma)
+plt.plot(x, p, 'k', linewidth=2)
+
+# Add labels and title
+plt.title('Normal Distribution of Class Test Results')
+plt.xlabel('Test Results')
+plt.ylabel('Frequency')
+
+# Show the plot
+plt.show()
+
+# Calculate skewness and kurtosis
+skewness = skew(test_results)
+kurt = kurtosis(test_results)
+
+print(f"Skewness: {skewness}")
+print(f"Kurtosis: {kurt}")

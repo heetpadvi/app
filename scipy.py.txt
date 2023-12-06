@@ -1,0 +1,146 @@
+from scipy import constants
+from scipy.optimize import root, minimize
+from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import connected_components
+import numpy as np
+
+# How many cubic meters are there in one litre?
+print(constants.liter)  # Spelling mistake in 'liter'
+
+# Finding the version of scipy
+import scipy
+print(scipy.__version__)
+
+# Print the constant value of PI
+print(constants.pi)
+
+# List of all constants
+print(dir(constants))
+
+# Return the specified unit in meter
+print(constants.yotta)
+print(constants.zetta)
+print(constants.exa)
+print(constants.peta)
+print(constants.tera)
+print(constants.giga)
+print(constants.mega)
+print(constants.kilo)
+print(constants.hecto)
+print(constants.deka)
+print(constants.deci)
+print(constants.centi)
+print(constants.milli)
+print(constants.micro)
+print(constants.nano)
+print(constants.pico)
+print(constants.femto)
+print(constants.atto)
+print(constants.zepto)
+
+# Return the specified units in bytes
+print(constants.kibi)
+print(constants.mebi)
+print(constants.gibi)
+print(constants.tebi)
+print(constants.pebi)
+print(constants.exbi)
+print(constants.zebi)
+print(constants.yobi)
+
+# Return the specified units in kg
+print(constants.gram)
+print(constants.metric_ton)
+print(constants.minute)
+print(constants.hour)
+print(constants.day)
+print(constants.week)
+print(constants.year)
+print(constants.Julian_year)
+print(constants.grain)
+print(constants.lb)
+print(constants.pound)
+print(constants.oz)
+print(constants.ounce)
+print(constants.stone)
+print(constants.long_ton)
+print(constants.short_ton)
+print(constants.troy_ounce)
+print(constants.troy_pound)
+print(constants.carat)
+print(constants.atomic_mass)
+print(constants.m_u)
+print(constants.u)
+
+# Return the specified units in radians
+print(constants.degree)
+print(constants.arcmin)
+print(constants.arcminute)
+print(constants.arcsec)
+print(constants.arcsecond)
+
+# Return the specified units in seconds
+print(constants.minute)
+print(constants.hour)
+print(constants.day)
+print(constants.week)
+print(constants.year)
+print(constants.Julian_year)
+
+# Return the specified units in meters
+print(constants.inch)
+print(constants.foot)
+print(constants.yard)
+print(constants.mile)
+print(constants.mil)
+print(constants.pt)
+print(constants.point)
+print(constants.survey_foot)
+print(constants.survey_mile)
+print(constants.nautical_mile)
+print(constants.fermi)
+print(constants.angstrom)
+print(constants.micron)
+print(constants.au)
+print(constants.astronomical_unit)
+print(constants.light_year)
+print(constants.parsec)
+
+# Return the specified units in pascals
+print(constants.atm)
+print(constants.atmosphere)
+print(constants.bar)
+print(constants.torr)
+print(constants.mmHg)
+print(constants.psi)
+
+# Find roots of the equation x + cos(x)
+def eqn(x):
+    return x + np.cos(x)  # Need to use numpy's cosine function
+
+myroot = root(eqn, 0)
+print(myroot.x)
+
+# Minimize the function x^2 + x + 2 with BFGS
+def eqn(x):
+    return x**2 + x + 2
+
+mymin = minimize(eqn, 0, method='BFGS')
+print(mymin)
+
+# Create a CSR matrix from an array
+arr = np.array([0, 0, 0, 0, 0, 1, 1, 0, 2])
+print(csr_matrix(arr))
+
+# Viewing stored data (not the zero items) with the data property
+arr = np.array([[0, 0, 0], [0, 0, 1], [1, 0, 2]])
+print(csr_matrix(arr).data)
+
+# Find all of the connected components with the connected_components() method
+arr = np.array([
+    [0, 1, 2],
+    [1, 0, 0],
+    [2, 0, 0]
+])
+newarr = csr_matrix(arr)
+print(connected_components(newarr))

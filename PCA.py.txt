@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sb
+from sklearn.decomposition import PCA
+from sklearn.datasets import load_iris
+
+data = load_iris()
+
+# Components declaration
+pca = PCA(n_components=2)
+
+# Reduction
+principal = pca.fit_transform(data.data)  # Using data.data for the PCA transformation
+
+# Proper tabular format
+dataframe = pd.DataFrame(principal, columns=["col1", "col2"])
+
+print("dataframe", dataframe)
+
+# Scatterplot
+sb.scatterplot(x="col1", y="col2", data=dataframe)  # Specify x and y columns
+plt.show()
